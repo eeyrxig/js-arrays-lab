@@ -1,11 +1,18 @@
 // Question 1
-function average() {
+function average(numbers) {
   // Write your code here
+  for(let i = 1; i < numbers.length; i++) {
+  const sum = sum + i;// sum += i
+  let mean =  sum / numbers.length;
+  return mean;
+  }
 }
-
 // Question 2
-function combineArrays() {
+function combineArrays(array1, array2) {
   // Write your code here
+  let newArray = [];
+  newArray.push(array1, array2);
+  return newArray;
 }
 
 // Question 3
