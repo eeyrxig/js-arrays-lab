@@ -41,7 +41,7 @@ Then run `npm test` to see the results.
 
     Examples:
     ```javascript
-    combineArrays(["Ann", true, 4], [1, "Reuben"]); // ["Ann", true, 4, null, "Reuben"]
+    combineArrays(["Ann", true, 4], [1, "Reuben"]); // ["Ann", true, 4, 1, "Reuben"]
     combineArrays([4, 5, 6], [1, 2, 3]); // [4, 5, 6, 1, 2, 3]
     ```
 
