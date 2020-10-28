@@ -1,68 +1,20 @@
-# Simple Functions Lab
+# Arrayss Lab
 
-This lab aims to give you more practice writing functions and solving problems.
+This lab aims to give you more practice solving problems with arrays.
 
 ## Instructions
 
-As you're writing your functions, it's important to code a little and test a little. It's easier to fix a few bugs at a time than to have to fix a ton of bugs at the end. There are three ways in which you can test your code.
+As you're writing your functions, it's important to code a little and test a little. It's easier to fix a few bugs at a time than to have to fix a ton of bugs at the end. For each function, make sure you are testing by both: 
 
     * Using the browser
-    * Using `node`
     * Using the automatic test cases your instructors have provided
 
-## Question 1 Walkthrough
-
-Code along as we show you how to solve Question 1. Write a function that takes a name and **returns** a greeting with `"Hello"` and the person's name.
-
-Example:
-```javascript
-hello("Carmen"); // "Hello, Carmen!"
-```
-
-In your code in the `answers.js` file, write:
-```javascript
-function hello(name) {
-  return `Hello, ${name}!`;
-}
-```
 
 ### Testing using the Browser
 
 To test your code using the browser, open your `index.html` in a new tab. Because your HTML has a `<script>` tag to your JavaScript file, they are linked together. Open the console in your HTML webpage and *invoke* the function to verify it has the expected output. You can ignore the error about `module is not defined` and the error about `Failed to load resource`.
 
 ![console](pictures/console.png)
-
-### Testing using node
-
-You can run JavaScript outside the browser using the command `node <path_to_file>`. From your terminal, you must be in the project folder where `answers.js` is located. Then you can run the file from the terminal with `node answers.js`. 
-
-**However, this will not print anything out yet!**
-
-We declared our function but we never *invoked* it! We can invoke functions in the browser's console, but we can't invoke functions in the terminal. Instead, we must *invoke the function* in the file itself, then run the file. Update your code in `answers.js` to *invoke* the function:
-
-```javascript
-hello("Carmen"); // Remember hoisting is a thing ;)
-
-// Question 1
-function hello(name) {
-  return `Hello, ${name}!`;
-}
-```
-
-*Save your file.* If we run `nodes answer.js`, we get... still nothing...
-
-Although we have invoked the function, we never tell our program to *do anything* with the function's **return value**. Let's make a change to *print* out the return value of our function:
-
-```javascript
-console.log( hello("Carmen") ); // Logs "Hello, Carmen!"
-
-// Question 1
-function hello(name) {
-  return `Hello, ${name}!`;
-}
-```
-
-*Save your file.* Now run `node answers.js` in the terminal to see the expected output.
 
 ### Testing using Automated Test Cases
 
