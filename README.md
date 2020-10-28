@@ -1,14 +1,14 @@
-# Arrayss Lab
+# Arrays Lab
 
 This lab aims to give you more practice solving problems with arrays.
 
 ## Instructions
 
-As you're writing your functions, it's important to code a little and test a little. It's easier to fix a few bugs at a time than to have to fix a ton of bugs at the end. For each function, make sure you are testing by both: 
+For each function, make sure you are testing using both: 
+* The browser
+* The automatic test cases your instructors have provided
 
-    * Using the browser
-    * Using the automatic test cases your instructors have provided
-
+> Think of the browser as running _your_ tests, and the test cases as running _our_ tests. 
 
 ### Testing using the Browser
 
@@ -18,9 +18,9 @@ To test your code using the browser, open your `index.html` in a new tab. Becaus
 
 ### Testing using Automated Test Cases
 
-Your instructors have written some test cases in the file `answers.text.js`. DO NOT change anything in this file. These tests cases are very similar to the test cases you might have seen on CodeWars.
+Your instructors have written some test cases in the file `answers.text.js`.
 
-From the terminal run `npm install` to install dependencies. You only have to run this command once per lab/assignment.
+From the terminal run `npm install` to install dependencies. You only have to run this command once per repository.
 
 Then run `npm test` to see the results.
 
@@ -28,95 +28,84 @@ Then run `npm test` to see the results.
 
 ## Coding Exercises
 
-1. Write a function that takes a name and **returns** a greeting with `"Hello"` and the person's name.
+1. Write a function that takes in an array of numbers and returns the average value of all the numbers in that array. 
 
     Example:
     ```javascript
-    hello("Carmen"); // "Hello, Carmen!"
-    hello("Devonte"); // "Hello, Devonte!"
-    hello("Reuben Ogbonna"); // "Hello, Reuben Ogbonna!"
+    average([11, 12, 13]); // 12
+    average([15, 16, 17, 18, 19, 20]); // 17.5
+    average([101, 4, 78]); // 61
     ```
 
-2. Write a function that takes in two numbers and returns the product (multiply those numbers together):
+2. Write a function that takes in two arrays and returns a new array with all elements from both arrays.
 
     Examples:
     ```javascript
-    findProduct(5, 7); // 35
-    findProduct(15, 10); // 150
-    findProduct(25.75, 42); // 1081.5
+    combineArrays(["Ann", true, 4], [1, "Reuben"]); // ["Ann", true, 4, null, "Reuben"]
+    combineArrays([4, 5, 6], [1, 2, 3]); // [4, 5, 6, 1, 2, 3]
     ```
-    
-3. Write a function that returns the area of a square when given one side as the input:
+
+3. Write a function that takes in two arrays of numbers and returns the sum across both arrays.
 
     Examples:
     ```javascript
-    getSquare(5); // 25
-    getSquare(4); // 16
-    getSquare(3); // 9
+    arrayPlusArray([1, 2, 3], [4, 5, 6]); // 21
+    arrayPlusArray([-1, -2, -3], [-4, -5, -6]; // -21
+    arrayPlusArray([0, 0, 0], [4, 5, 6]); // 15
+    arrayPlusArray([100, 200, 300], [400, 500, 600]); // 2100
     ```
 
-4. Write a function that takes in a number and returns the opposite of that number. If the original number is positive, return the negative version of that number. If the original number is negative, return the positive veresion of that number.
+4. Write a function that takes in a name and returns a initials. The returned string should be two capital letters with a dot separating them. The input will always be two words with one space in between them.
 
     Examples:
     ```javascript
-    makeOpposite(9); // -9
-    makeOpposite(-3); // 3
-    makeOpposite(5.78); // -5.78
+    abbrevName("Sam Harris"); // "S.H"
+    abbrevName("Patrick Feenan"); // "P.F"
     ```
 
-5. Write a function that **logs** all even numbers from 0 to 50, inclusive, to the console. Log all numbers on separate lines. Then, this function should **return** the string, `"Why is 6 afraid of 7?"`.
+5. Write a function that takes in a sentence and returns a new string where every word starts with a capital letter.
 
     Example:
     ```javascript
-    logEvenNumbers(); // "Why is 6 afraid of 7?"
-
-    /* Printed to the Console */
-    // 0
-    // 2
-    // 4
-    .
-    .
-    .
-    // 48
-    // 50
+    makeTitle("How can mirrors be real if our eyes aren't real"); // "How Can Mirrors Be Real If Our Eyes Aren't Real"
+    makeTitle("most trees are blue"); // "Most Trees Are Blue"
     ```
 
-6. Write a function that returns the sum of all numbers between 1 and some other number, inclusive, that are multiples of 4 or 7. For example, if the supplied number is 17, the result should be 61 (4 + 7 + 8 + 12 + 14 + 16).
-
-    You may assume that the number passed in is an integer greater than 1.
+6. Write a function that when provided an array of three numbers, returns the index of the numerical element that lies between the other two elements.
 
     Examples:
     ```javascript
-    sumFoursAndSevens(17); //(4 + 7 + 8 + 12 + 14 + 16) => 61
-    sumFoursAndSevens(21); //(4 + 7 + 8 + 12 + 14 + 16 + 20 + 21) => 102
+    gimme([2, 3, 1]); // 0
     ```
-    
-7. Write a function that takes one argument, a positive integer, and returns a string of alternating `'X'`s and `'O'`s, always starting with a `'X'`. The length of the string should match the given integer.
+    2 is the number that fits between 1 and 3 and the index of 2 in the input array is 0.
 
-    Examples:
     ```javascript
-    exsAndOhs(6);    // "XOXOXO"
-    exsAndOhs(9);    // "XOXOXOXOX"
-    exsAndOhs(4);    // "XOXO"
-    exsAndOhs(7);    // "XOXOXOX"
+    gimme([5, 10, 14]); // 1
     ```
+    10 is the number that fits between 5 and 14 and the index of 10 in the input array is 1.
+
+
 
 ## Challenge functions:
 
 There are no automated test cases for the following problems. You will be responsible for testing them yourselves manually, either using the browser or `node`.
 
-1. Write a function `weirdString()` that takes in a string and returns a copy of that string with every vowel removed, and then of the remaining letters, every other letter alternates between lowercase and uppercase.
+1. Write a difference function, which subtracts one array from another and returns the result. The resulting array should have removed all values from the first array, which are present in array which are present in the second array.
 
-```javascript
-weirdString("hello world") // "hLl wRlD"
-weirdString("Reuben Ogbonna") // "rBn gBnN"
-weirdStsring("Maya Bhattacharjee-Marcantonio") // "mY BhTtChRj-mRcNtNi"
-```
+    Examples:
 
-2. Write a function `possibleSums()` that takes in an integer. It returns an array of all possible sums of every two digits combination within that number. 
+    ```javascript
+    arrayDiff([1,2],[1]) // [2]
+    arrayDiff([1,2,2,2,3],[2]) // [1,3]
+    ```
 
-For example, given the number `12345`, all possible sums of every two digit combination from that number are:
 
-`[ 1 + 2, 1 + 3, 1 + 4, 1 + 5, 2 + 3, 2 + 4, 2 + 5, 3 + 4, 3 + 5, 4 + 5 ]`
+2. Write a function that takes in an array of arrays. If you sort the arrays by their length, you will see, that their length-values are consecutive.
+But one array is missing! Return the length of the missing array.
 
-So the function should return `[ 3, 4, 5, 6, 5, 6, 7, 7, 8, 9 ]`.
+    Examples:
+
+    ```javascript
+    findMissingLength( [ [1, 2], [4, 5, 1, 1], [1], [5, 6, 7, 8, 9] ] ) // 3
+    findMissingLength([ [ 5, 2, 9 ], [ 4, 5, 1, 1 ], [ 1 ], [ 5, 6 ] ] ) // 5
+    ```

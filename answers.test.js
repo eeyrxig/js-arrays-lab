@@ -1,58 +1,59 @@
 const answers = require(`./answers`);
 
 // Question 1
-test('Question 1: hello', () => {
-  expect(answers.hello('Carmen')).toBe("Hello, Carmen!");
-  expect(answers.hello('Devonte')).toBe("Hello, Devonte!");
-  expect(answers.hello('Reuben Ogbonna')).toBe("Hello, Reuben Ogbonna!");
+test('Question 1: average', () => {
+  expect(answers.average([11, 12, 13])).toBe(12);
+  expect(answers.average([15, 16, 17, 18, 19, 20])).toBe(17.5);
+  expect(answers.average([101, 4, 78])).toBe(61);
 });
 
 // Question 2
-test(`Question 2: findProduct`, () => {
-  expect(answers.findProduct(5, 7)).toBe(35);
-  expect(answers.findProduct(15, 10)).toBe(150);
-  expect(answers.findProduct(25.75, 42)).toBe(1081.5);
+test(`Question 2: combineArrays`, () => {
+  let test1 = answers.combineArrays(["Ann", true, 4], [null, "Reuben"]);
+  console.log("jfioasjfiosaf", test1)
+  expect(Array.isArray(test1)).toBe(true);
+  expect(test1.includes("Ann")).toBe(true);
+  expect(test1.includes(true)).toBe(true);
+  expect(test1.includes(4)).toBe(true);
+  expect(test1.includes(null)).toBe(true);
+  expect(test1.includes("Reuben")).toBe(true);
+
+  let test2 = answers.combineArrays([4, 5, 6], [1, 2, 3]);
+  expect(Array.isArray(test2)).toBe(true);
+  expect(test2.includes(4)).toBe(true);
+  expect(test2.includes(5)).toBe(true);
+  expect(test2.includes(6)).toBe(true);
+  expect(test2.includes(1)).toBe(true);
+  expect(test2.includes(2)).toBe(true);
+  expect(test2.includes(3)).toBe(true);
+  expect(test2.includes(0)).toBe(false);
+  expect(test2.includes(7)).toBe(false);
 });
 
 // Question 3
-test(`Question 3: getSquare`, () => {
-  expect(answers.getSquare(5)).toBe(25);
-  expect(answers.getSquare(4)).toBe(16);
-  expect(answers.getSquare(3)).toBe(9);
+test(`Question 3: arrayPlusArray`, () => {
+  expect(answers.arrayPlusArray([1, 2, 3], [4, 5, 6])).toBe(21);
+  expect(answers.arrayPlusArray([-1, -2, -3], [-4, -5, -6])).toBe(-21);
+  expect(answers.arrayPlusArray([0, 0, 0], [4, 5, 6])).toBe(15);
+  expect(answers.arrayPlusArray([100, 200, 300], [400, 500, 600])).toBe(2100);
 });
 
 // Question 4
-test(`Question 4: makeOpposite`, () => {
-  expect(answers.makeOpposite(9)).toBe(-9);
-  expect(answers.makeOpposite(-4)).toBe(4);
-  expect(answers.makeOpposite(3.65)).toBe(-3.65);
+test(`Question 4: abbrevName`, () => {
+  expect(answers.abbrevName("Sam Harris")).toBe("S.H");
+  expect(answers.abbrevName("Patrick Feenan")).toBe("P.F");
 });
 
 // Question 5
-test('Question 5: logEvenNumbers should log to the console', () => {
-  global.console = { log: jest.fn() };
-  answers.logEvenNumbers();
-  expect(global.console.log).toHaveBeenCalledWith(2);
-  expect(global.console.log).toHaveBeenCalledWith(4);
-  expect(global.console.log).toHaveBeenCalledWith(6);
-  expect(global.console.log).toHaveBeenCalledWith(50);
-}); 
+test('Question 5: makeTitle', () => {
+  expect(answers.makeTitle("How can mirrors be real if our eyes aren't real")).toBe("How Can Mirrors Be Real If Our Eyes Aren't Real");
+  expect(answers.makeTitle("most trees are blue")).toBe("Most Trees Are Blue");
 
-// Question 5
-test('Question 5: logEvenNumbers should return "Why is 6 afraid of 7?"', () => {
-  expect(answers.logEvenNumbers()).toBe("Why is 6 afraid of 7?");
 }); 
 
 // Question 6
-test('Question 6: sumFoursAndSevens', () => {
-  expect(answers.sumFoursAndSevens(17)).toBe(61);
-  expect(answers.sumFoursAndSevens(21)).toBe(102);
+test('Question 6: gimme', () => {
+  expect(answers.gimme([2, 3, 1])).toBe(0);
+  expect(answers.gimme([5, 10, 14])).toBe(1);
 });
 
-// Question 7
-test('Question 7: exsAndOhs', () => {
-  expect(answers.exsAndOhs(6)).toBe("XOXOXO");
-  expect(answers.exsAndOhs(9)).toBe("XOXOXOXOX");
-  expect(answers.exsAndOhs(4)).toBe("XOXO");
-  expect(answers.exsAndOhs(7)).toBe("XOXOXOX");
-});
