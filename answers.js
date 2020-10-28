@@ -26,9 +26,11 @@ function abbrevName() {
 }
 
 // Question 5
-function makeTitle() {
-  // Write your code here
+function makeTitle(str) {
+  const newStr = str.split(" ") + str.charAt(0)  + str.toUpperCase(0) + str.toString(); 
+  return newStr;
 }
+
 
 // Question 6
 function gimme() {
